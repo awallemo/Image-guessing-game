@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IMGuess</title>
+    <link th:href="@{/css/multiplayerWon.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<meta http-equiv="refresh" content="2000"/>
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+    <div class="singlePlayerMessageBOX">
+        <span th:text="${wonMessage}" id="singlePlayerMessage"></span>
+    </div>
+    <div class="WonMessage">
+        <span th:text="${message}" id="gamemessage"> </span>
+    </div>
+    <form action="singleplayer">
+        <div class="div-button">
+            <button id="NewGameButton" class="btn btn-newStyle newGameBtnSingle">Play Again</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

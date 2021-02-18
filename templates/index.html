@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="BOX">
+
+        <h1>Login</h1>
+        <span th:text="${loginmessage}" id="loginmessage"> </span>
+
+        <form action="/login" method="POST">
+            <div class="BOXusername">
+                <i class="material-icons">
+                    person
+                </i>
+                <input type="text" placeholder="Username" name="username" value="" required autofocus>
+            </div>
+
+            <div class="BOXpassword">
+                <i class="material-icons">
+                    lock
+                </i>
+                <input type="password" placeholder="Password" name="password" value="" required>
+            </div>
+            <a href="/login">
+            <input class="btn" type="submit" name="" value="sign in" >
+        </a>
+
+            <a href="/registerNewUser">
+            <div class="new">
+                <i class="material-icons">
+                    person_add
+                </i>
+            </div>
+            </a>
+    </form>
+    </div>
+</div>
+</html>

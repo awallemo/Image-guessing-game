@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+    <br><br>
+    <h2 class="instructionsHeader">Info:</h2>
+    <h2 class="instructions">Chose in what mode you wanna play!</h2>
+    <h2 class="instructions">You will be redirected to this page if the game room does not exist, so be careful!</h2>
+
+    <div class="BOX">
+        <h1>Multiplayer Mode!</h1>
+        <form action="/multiplayerExistingGame">
+            <input type="text" id="gameIndexChooseMultiplayer" name="gameIndexChooseMultiplayer" placeholder="Game room" utofocus>
+            <input class="btn" type="submit" value="Join a game">
+        </form>
+        <a href="/joinAvailableMultiplayerGame">
+            <input class="btn" type="submit" name="" value="Random Game">
+        </a>
+        <a href="/multiplayerMain">
+            <input class="btn" type="submit" name="" value="New multiplayer Game">
+        </a>
+    </div>
+
+    </form>
+</div>
+</div>
+</html>

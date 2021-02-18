@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="ISO-8859-1">
+    <title>IMGuess</title>
+    <link th:href="@{/css/multiplayer.css}" rel="stylesheet">
+</head>
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="guesserbox">
+
+        <div class="gamemessage">
+            <span th:text="${message}" id="gamemessage"> </span>
+        </div>
+
+        <div class=BOXimage>
+            <div th:each="image,iter : ${listimages}" class="alpha-mask">
+                <img th:id="${iter.index}" th:attr="src=@{|${image}|}" onerror="this.style.display='none'"/>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <form action="singleplayer" method="GET" id="guessform">
+        <input type="text" id="guess" name="guess" style="margin-left: 8px;" autofocus>
+        <input type="submit" value="Guess" class="btn btn-newStyle"
+               style="padding-top: 2px;padding-bottom: 2px;padding-right: 16px">
+    </form>
+
+    <form action="singleplayer" method="GET" id="guessform">
+        <input type="hidden" name="reset" value="reset" style="margin-left: 8px;">
+        <input type="submit" value="Reset" class="btn btn-newStyle btn-reset"
+               style="padding-top: 2px;padding-bottom: 2px;padding-right: 16px">
+    </form>
+
+    <div class="prevguessbox">
+        <h2 class="prevGuessesTextHeader">Previous guesses:</h2>
+        <ul class="prevGuesses">
+            <li th:each="prevguess : ${prevGuesses}" th:text="${prevguess}"></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="overskrift">How to play IMGuess:</div>
+    <div class="cardContainer">
+        <div class="maincontainer">
+            <div class="thecard">
+                <div class="thefront">
+                    SINGLE-PLAYER
+                    <i class="material-icons single" id='single'>
+                        emoji_people
+                    </i>
+                </div>
+                <div class="theback">
+                    You are the guesser, and the goal of the game is to guess what the picture is. You start by seeing a
+                    part of the picture. After that you have 1 attempt to guess what is in the picture. If you can't
+                    guess
+                    correctly you will see an additional part of the picture, and you get 1 more guesse. It continues
+                    like
+                    this until you've guessed correctly.
+                </div>
+            </div>
+        </div>
+
+        <div class="maincontainer1">
+            <div class="thecard1">
+                <div class="thefront1">
+                    TWO-PLAYER
+                    <i class="material-icons doble" id="doble">
+                        sports_kabaddi
+                    </i>
+                </div>
+                <div class="theback1">
+                    One of you will be the Guesser and the other will be the Proposer. The Proposer will see the entire
+                    picture and chooses which parts of the picture the guesser will see. After the Proposer has chosen a
+                    part of the picture to show to the Guesser. The Guesser will guess what it is a picture of. The
+                    Guesser
+                    has 1 attempt to guess correctly before it goes back to the proposer. The Guesser can choose to
+                    pass
+                    the turn if they feel like it. If the Guesser couldnt guess correctly or passed their turn, the
+                    Proposer
+                    will chose another piece of the picture to show. This continues until the Guesser chooses correctly,
+                    or
+                    the entire picture has been shown.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

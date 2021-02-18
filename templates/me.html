@@ -1,0 +1,40 @@
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="BOX">
+
+        <h1>About <span th:text ="${userprofile}"></span></h1>
+
+            <div class="BOXname">
+                    <p>Name: <span th:text="${name}"> </span> </p>
+                </div>
+            <div class="BOXusername">
+                <p>Username: <span th:text="${userprofile}"> </span> </p>
+            </div>
+            <div class="BOXpassword">
+                <p>Singleplayer: </p>
+                <p>Highscore: <span th:text="${singlescoor}"></span></p>
+                <p>Games played: <span th:text="${SPgames}"></span></p>
+                <p>Average score: <span th:text="${SPaverage}"></span></p>
+            </div>
+            <div class="BOXconform">
+                <p>Multiplayer: </p>
+                <p>Highscore: <span th:text="${doublescoor}"></span></p>
+                <p>Games played: <span th:text="${MPgames}"></span></p>
+                <p>Average score: <span th:text="${MPaverage}"></span></p>
+            </div>
+
+
+    </form>
+    </div>
+</div>
+</html>

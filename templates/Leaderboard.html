@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="playerbox1">
+        <h2 class="playerTextHeader" >Singleplayer:</h2>
+            <ul class="players" >
+            <li th:each="player : ${SingleP}"  th:href= "@{/user(user=${player})}"> <span th:text ="${player}"></span> </li>
+        </ul>
+    </div>
+
+		<br> <br> <br>
+
+
+
+		    <div class="playerbox2">
+		        <h2 class="playerTextHeader" >Multiplayer:</h2>
+		            <ul class="players" >
+		            <li th:each="player : ${MultiP}"  th:href= "@{/user(user=${player})}"> <span th:text ="${player}"></span> </li>
+		        </ul>
+		    </div>
+
+</div>
+</body>
+</html>
