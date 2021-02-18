@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<meta http-equiv="refresh" content="30"/>
+<body>
+
+
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="playerbox">
+        <h2 class="playerTextHeader" >Players online:</h2>
+            <ul class="players" >
+            <a th:each="player : ${players}"  th:href= "@{/user(user=${player})}"> <span th:text ="${player}"></span> </a>
+        </ul>
+    </div>
+
+    <div class="BOX">
+        <h1>Choose Gamemode!</h1>
+        <a href="singleplayer">
+            <input class="btn" type="submit" name="" value="Singleplayer">
+        </a>
+        <a href="/multiplayerJoin">
+            <input class="btn" type="submit" id="" value="Multiplayer">
+        </a>
+    </div>
+
+    </form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IMGuess</title>
+    <link th:href="@{/css/multiplayer.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+
+    <div class="guesserbox">
+        <div class="gamemessage">
+            <span th:text="${message}" id="gamemessage"> </span>
+        </div>
+        <h2 th:text="${gameIndex}" id="gameRoom"> </h2>
+
+
+        <br><br><br>
+        <form action="guessImage" method="POST">
+            <input type="text" id="guess" name="guess" style="margin-left: 8px;" autofocus>
+            <input type="submit" value="Guess" class="btn btn-newStyle"
+                   style="padding-top: 2px;padding-bottom: 2px;padding-right: 16px">
+        </form>
+
+
+        <span class="guessesCounter" th:text="${numberOfGuesses}" id="guessCounterText"></span>
+        <div class="prevGuessBoxMultiplayer">
+            <h2 class="prevGuessesTextHeader">Previous guesses: </h2>
+            <ul class="prevGuesses">
+                <li th:each="prevGuess : ${prevGuesses}" th:text="${prevGuess}"></li>
+            </ul>
+        </div>
+
+        <br><br>
+
+        <div th:each="image,iter : ${listimages}" class="alpha-mask">
+            <img th:id="${iter.index}" th:attr="src=@{|${image.getUrl()}|}" onerror="this.style.display='none'"/>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

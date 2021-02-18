@@ -1,0 +1,300 @@
+
+body {
+    min-height: 100vh;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-size: cover;
+    background-image: url("background/background.png");
+    margin: 0;
+}
+
+.bodycover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(75, 46, 46, 0.7);
+}
+
+
+div {
+    margin: auto;
+    width: auto;
+    /* max-width: 800px; */
+    margin-bottom: 30px;
+}
+
+.BOXlogin {
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.BOXlogin h1 {
+    float: left;
+    font-size: 40px;
+    border-bottom: 6px solid #f2f2f2;
+    margin-bottom: 50px;
+    padding: 13px 0;
+}
+
+.BOXusername {
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid white;
+}
+
+.BOXusername i {
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+
+.BOXusername input {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 200px;
+    float: left;
+    margin: 10px;
+}
+
+.BOXpassword {
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid white;
+}
+
+.BOXpassword i {
+    width: 30px;
+    float: left;
+    text-align: center;
+}
+
+.BOXpassword input {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 200px;
+    float: left;
+    margin: 10px;
+}
+
+.btn {
+    width: 100%;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.new {
+    width: 10%;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.new:hover {
+    background-color: white;
+    color: black;
+}
+
+ul {
+    float: left;
+    list-style-type: none;
+    margin-top: 0%;
+    margin-left: -2%;
+    display: inline-block;
+
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    width: 100%;
+    background: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    margin: 12px 0;
+    width: 100%;
+    background: none;
+    border: 2px solid white;
+    font-size: 18px;
+    margin: 12px 0;
+
+}
+
+ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.logo {
+    right: 2%;
+    top: 91%;
+    position: absolute;
+}
+
+.logout {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0
+
+}
+
+#logout {
+    font-size: 25px;
+}
+
+#logout a {
+    color: white;
+}
+
+.logout:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn {
+    padding: 8px 16px;
+    width: 128px;
+    border: 1px solid #0000;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.btn-newStyle {
+    background: none;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-newStyle:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-newStyle:disabled,
+.btn-newStyle[disabled] {
+    cursor: not-allowed;
+}
+
+.newGameBtn {
+    left: 43%;
+    position: absolute;
+    top: 60%
+}
+
+.newGameBtnSingle {
+    left: 46%;
+    position: absolute;
+    top: 60%;
+}
+
+.closeGameBtn {
+    left: 51%;
+    position: absolute;
+    top: 60%;
+}
+
+.div-button {
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+
+.WonMessage {
+    font-size: 700%;
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+#score {
+    font-size: 600%;
+    left: 42%;
+    position: absolute;
+    top: 32%;
+    color: white;
+}
+
+#singlePlayerMessage {
+    font-size: 600%;
+    left: 32%;
+    top: 26%;
+    color: white;
+}
+
+
+.singlePlayerMessageBOX {
+    top: 26%;
+    position: relative;
+}
+
+#usernameShow {
+    color: white;
+    margin-left: 33%;
+    top: 89.7%;
+    position: absolute;
+    font-size: 150%;
+    left: -31%;;
+}

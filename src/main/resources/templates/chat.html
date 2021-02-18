@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <meta charset="ISO-8859-1">
+    <title>IMGuess</title>
+    <link th:href="@{/css/multiplayer.css}" rel="stylesheet">
+</head>
+<meta http-equiv="refresh" content="30"/>
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+    <br><br><br>
+
+    <div class="chatbox">
+        <div>
+            <span class="chatheader">Chat freely, but behave!:</span>
+        </div>
+        <ul class="chatelements">
+            <li th:each="chatElement : ${chatList}" th:text="${chatElement}"></li>
+        </ul>
+    </div>
+
+
+    <form action="chat" method="get" id="chatForm">
+        <input type="text" id="chatText" name="chatText" style="margin-left: 8px;" autofocus>
+        <input type="submit" value="Post" class="btn-chat"
+               style="padding-top: 2px;padding-bottom: 2px;padding-right: 16px">
+    </form>
+
+
+</div>
+
+
+</body>
+</html>

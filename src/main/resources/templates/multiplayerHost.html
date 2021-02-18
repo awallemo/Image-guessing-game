@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>IMGuess</title>
+    <!-- Decide the style of the picture -->
+    <link th:href="@{/css/multiplayer.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+
+<body>
+<div class="bodycover">
+    <div th:insert="header :: header">...</div>
+    <div class="gamemessage">
+        <span th:text="${message}" id="gamemessage"> </span>
+    </div>
+
+
+    <h2 th:text="${gameIndex}" id="gameRoom"> </h2>
+    <h2 th:text="${selectedLabelShow}" id="selectedLabelName"></h2>
+
+    <br><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <h2 class="instructionsHeader">Instructions:</h2>
+    <h2 class="instructions">You can use the left and right arrows to select the picture segment you want to send.</h2>
+    <h2 class="instructions">You can also click directly on the image.</h2>
+    <div class="prevGuessBoxMultiplayerHost">
+        <h2 class="prevGuessesTextHeader">Previous guesses: </h2>
+        <ul class="prevGuessesHost">
+            <li th:each="prevGuess : ${prevGuesses}" th:text="${prevGuess}"></li>
+        </ul>
+    </div>
+    <br><br><br>
+
+    <div class="BOXimage">
+        <div>
+            <form action="sendImage" method="POST">
+                <input type="hidden" id="imageId" name="imageId" th:value="${selectedLabel}"/>
+                <input type="hidden" id="partImageId" name="partImageId"/>
+                <div class="div-button">
+                    <button id="cancelButton" class="btn btn-newStyle">Cancel</button>
+                    <button id="sendButton" type="submit" class="btn btn-newStyle" disabled="disabled">Submit</button>
+                </div>
+            </form>
+        </div>
+        <br> <br>
+        <div data-url="" class="widget-wrapper">
+            <div id="imageDiv" class="image-div-close">
+                <div th:each="image,iter : ${listimages}"
+                     th:class=" ${image.getStatus() == 1}? 'image-wrapper image-wrapper-closed image-wrapper-sent':'image-wrapper image-wrapper-closed'">
+                    <img th:id="${iter.index}" th:attr="src=@{|${image.getUrl()}|}"
+                         onerror="this.style.display='none'"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script th:src="@{/jsfiles/multiplayerHost.js}"></script>
+</body>
+</html>

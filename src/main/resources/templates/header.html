@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <title>IMGuess</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class=main>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="rules">How to play</a></li>
+            <li><a href="leaderboard">Leaderboard</a></li>
+            <li><a href="madeby">Madeby</a></li>
+            <span th:if="${username!=null}">
+          <li><a href="user"><span> Profile </span></a></li>
+        </span>
+            <span th:if="${username!=null}">
+         <li><a href="chat">Chat</a></li>
+       </span>
+        </ul>
+        <div class="logo">
+            <img src="https://i.imgur.com/eOc6mIP.png" border="0">
+        </div>
+        <div class="headerUsername">
+            <div class="gamemessage">
+            </div>
+        </div>
+        <span th:if="${username!=null}">
+            <div id = "usernameShow">
+                    <p>Username: <span th:text="${username}"></span></p>
+            </div>
+        <div class="logout">
+            <i class="material-icons" id="logout">
+                <a href="logout">  exit_to_app</a>
+            </i>
+        </div>
+      </span>
+    </div>
+</header>
+</body>
+</html>

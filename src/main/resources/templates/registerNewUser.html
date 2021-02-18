@@ -1,0 +1,50 @@
+<head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>IMGuess</title>
+        <link th:href="@{/css/main.css}" rel="stylesheet">
+    </head>
+    <div class="bodycover">
+        <div th:insert="header :: header">...</div>
+
+        <div class="BOX">
+
+            <h1>Create new user</h1>
+
+              <span th:text="${createmessage}" id="createmessage"> </span>
+
+            <form action="/addPlayer" method="POST">
+                <div class="BOXname">
+                        <i class="material-icons">
+                            person
+                        </i>
+                        <input type="text" placeholder="Name" name="name" id="name" required autofocus>
+                    </div>
+                <div class="BOXusername">
+                    <i class="material-icons">
+                        person
+                    </i>
+                    <input type="text" placeholder="Username" name="username" id="username" required>
+                </div>
+
+                <div class="BOXpassword">
+                    <i class="material-icons">
+                        lock
+                    </i>
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                </div>
+                <div class="BOXconform">
+                        <i class="material-icons">
+                            lock
+                        </i>
+                        <input type="password" placeholder="confirm password" name="confirmpassword" id="confirmpassword" required>
+                    </div>
+                <input class="btn" type="submit" name="" value="Create user" >
+                <p>Password must have; at least 8 chars, contains at least one digit, contains at least one lower alpha char and one upper alpha char, contains at least one char within a set of special chars (@#%$^ etc.) and does not contain space, tab, etc.</p>
+        </form>
+        </div>
+    </div>
+    </html>
